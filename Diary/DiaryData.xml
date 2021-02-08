@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Diary>
+  <User Login = "korsa" Password = "123qwe">
+    <p Date ="NotToday">hello </p>
+    <p Date ="Today">world </p>
+    <p Date ="NotToday">how </p>
+    <p Date ="Today">are </p>
+    <p Date ="NotToday">you?</p>
+  </User>
+  <User Login = "korsa2" Password = "123qwe">
+    <p Date ="Today">hello </p>
+    <p Date ="Today">another world </p>
+    <p Date ="Today">how </p>
+    <p Date ="Today">are </p>
+    <p Date ="Today">you doing?</p>
+  </User>
+  <User Login = "korsa3" Password = "123qwe">
+    <p Date ="Today">hello </p>
+    <p Date ="Today">superior world </p>
+    <p Date ="Today">how long </p>
+    <p Date ="Today">have you </p>
+    <p Date ="Today">been alone?</p>
+  </User>
+</Diary>
