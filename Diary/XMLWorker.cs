@@ -11,7 +11,15 @@ namespace Diary
     {
         private readonly string documentName = "DiaryData.xml";
 
-        public XMLWorker()
+        private static XMLWorker instance;
+
+        public static XMLWorker GetInstance()
+        {
+            if (instance == null)
+                instance = new XMLWorker();
+            return instance;
+        }
+        private XMLWorker()
         {
             if (!File.Exists(documentName))
             {
@@ -107,7 +115,7 @@ namespace Diary
             bool signed = default;
             if (!CheckUserExist(login))
             {
-                throw new Exception($"User {login} don`t exist!");
+                throw new Exception($"User {login} doesn`t exist!");
             }
             else
             {
@@ -131,7 +139,7 @@ namespace Diary
             return signed;
         }
 
-        public void AddNote(DateTime date, string login, string text)
+        public void AddNote(string date, string login, string text)
         {
             var xmldoc = new XmlDocument();
             xmldoc.Load(documentName);
@@ -139,7 +147,7 @@ namespace Diary
             XmlNode root = xmldoc.SelectSingleNode($"//User[@Login=\"{login}\"]");
             XmlNode dateAttr = xmldoc.CreateNode(XmlNodeType.Attribute, "Date", "");
 
-            dateAttr.Value = date.ToShortDateString();
+            dateAttr.Value = date;
 
             XmlNode newNote = xmldoc.CreateElement("p");
             newNote.Attributes.SetNamedItem(dateAttr);
